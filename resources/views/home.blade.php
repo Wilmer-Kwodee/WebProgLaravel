@@ -16,30 +16,66 @@
           {{-- <h1 class="text-3xl font-bold tracking-tight text-gray-900">
               Dashboard
             </h1> --}}
-        <h1 class="text-3xl font-bold">
+        <h1 class="text-5xl font-bold">
             Under the Sea
             </h1>
-            Save water, save the world!
-      </div>
+            <p>Save water, save the world!</p>
+            <img src="{{url('/ocean.png')}}" style="width: 100%"/>
+        </div>
     </header>
     <main>
       <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <!-- Your content -->
-        {{-- <p>Welcome to my page!</p> --}}
-        <hr>
-        <h1>Your daily Challenge!</h1>
-        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-<label for="vehicle1"> I have a bike</label><br>
-<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-<label for="vehicle2"> I have a car</label><br>
-<input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-<label for="vehicle3"> I have a boat</label><br>
-        <p>14 October 2024</p>
+
+        <h1 class="text-2xl font-bold">Your daily Challenge!</h1>
+        <div id="challenges">
+            @foreach ($challenges as $challenge)
+            <article class="py-3 max-w-screen-md border-b border-gray-300">
+              <input type="checkbox" class="challenge-checkbox" id="challenge{{ $loop->index }}" name="challenge{{ $loop->index }}" value="{{ $challenge['challenge'] }}">
+              <label for="challenge{{ $loop->index }}">{{ $challenge['challenge']}}</label>
+            </article>
+            @endforeach
+          </div>
+
+          <!-- Hidden congratulation message -->
+          <div id="congrats-message" style="display: none;">
+            <br/>
+            <h1 class="text-5xl font-bold text-green-500">Challenge Completed! Congratulations!!!</h1>
+            <p>Share this happy moment with the community!</p>
+            <br/>
+            <a href="community" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">Share with community -></a>
+          </div>
+
+        </br>
+        </br>
+        </br>
+        <h1 class="text-2xl font-bold">14 October 2024</h1>
         <p>World condition right now: 70%</p>
         <p>Water crisis in africa: 3.3 mil</p>
-        <p>Let's fight this together!</p>
+        <p>Climate index: 7.31</p>
+        </br>
+        </br>
+        </br>
+        <h1 class="text-2xl font-bold">Let's fight this together!</h1>
       </div>
     </main>
   </div>
+
+  <script>
+    const checkboxes = document.querySelectorAll('.challenge-checkbox');
+    const congratsMessage = document.getElementById('congrats-message');
+    const challenges = document.getElementById('challenges');
+
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        if (Array.from(checkboxes).every(cb => cb.checked)) {
+            challenges.style.display = 'none';
+          congratsMessage.style.display = 'block';
+        } else {
+          congratsMessage.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>

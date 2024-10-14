@@ -14,20 +14,20 @@
     <header class="bg-white shadow">
       <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <h1 class="text-3xl font-bold tracking-tight text-gray-900">
-            Community
+              New Post
             </h1>
       </div>
     </header>
     <main>
       <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <!-- Your content -->
-        @foreach ($posts as $post)
-            <article class="py-8 max-w-screen-md border-b border-gray-300">
-                <h2 class="mb-1 text-3xl tracking-tight font-bold text-gray-900">{{ $post['title']}}</h2>
-                <p class="my-4 font-light">{{ $post['body']}}</p>
-                <a href="">Read more</a>
-            </article>
-        @endforeach
+        <form method="post" action="{{ url('/addnew') }}" (yes, gausah di passing parameter apa apa)
+        >
+            @csrf
+            <input name="title" placeholder="title..."></input>
+            <input name="body" placeholder="body..."></input>
+            <button type="submit">add new</button>
+        </form>
       </div>
     </main>
   </div>

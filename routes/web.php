@@ -1,14 +1,16 @@
 <?php
 
+use App\Http\Controllers\ChallengeController;
+use App\Http\Controllers\PostController;
+use App\Models\Challenge;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/dashboard', function () {
-    return view('dashboard', ['posts' => Post::all()]);
+Route::get('/', [ChallengeController::class, 'index']);
+
+Route::get('/community', function () {
+    return view('community', ['posts' => Post::all()]);
 });
 Route::get('/login', function () {
     return view('login');
@@ -19,6 +21,10 @@ Route::get('/register', function () {
 Route::get('/about', function () {
     return view('about');
 });
+Route::get('/newpost', function () {
+    return view('newpost');
+});
+Route::post('/addnew', [PostController::class, 'addnew']);
 
 // Route::get('/tailwind-test', function () {
 //     return view('app');
