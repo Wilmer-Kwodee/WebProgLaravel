@@ -13,4 +13,11 @@ class UserChallenge extends Model
     {
         return $this->belongsTo(Challenge::class);
     }
+
+    protected $fillable = [
+        'user_id',      // Add user_id here
+        'challenge_id', // Add challenge_id here as well
+        'created_at',
+        'updated_at',
+    ];
 }
