@@ -11,3 +11,10 @@ php artisan tinker
 php artisan make:model    
   What should the model be named?
 ❯ Post
+
+cp .env.example .env
+php artisan key:generate
+
+(buat test login)
+blue88dynamixx@gmail.com
+12345
