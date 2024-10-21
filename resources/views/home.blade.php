@@ -17,9 +17,9 @@
               Dashboard
             </h1> --}}
         <h1 class="text-8xl font-bold text-gray-400">
-            Under the Sea
+            Drop by Drop
             </h1>
-            <p class="text-sm text-gray-400">Save water, save the world!</p>
+            <p class="mt-3 text-sm text-gray-400">Save water, save the world!</p>
             <img src="{{url('/ocean.png')}}" style="width: 100%"/>
         </div>
     </header>
@@ -28,14 +28,18 @@
         <!-- Your content -->
 
         <h1 class="text-7xl font-bold text-cyan-400">Your daily Challenge!</h1>
+        @if(!Auth::guest())        
         <div id="challenges">
-            @foreach ($challenges as $challenge)
-            <article class="py-3 max-w-screen-md border-b border-gray-300">
-              <input type="checkbox" class="challenge-checkbox" id="challenge{{ $loop->index }}" name="challenge{{ $loop->index }}" value="{{ $challenge['challenge'] }}">
-              <label class="text-2xl" for="challenge{{ $loop->index }}">{{ $challenge['challenge']}}</label>
-            </article>
-            @endforeach
-          </div>
+          @foreach ($challenges as $challenge)
+          <article class="py-3 max-w-screen-md border-b border-gray-300">
+            <input type="checkbox" class="challenge-checkbox" id="challenge{{ $loop->index }}" name="challenge{{ $loop->index }}" value="{{ $challenge['challenge'] }}">
+            <label class="text-2xl" for="challenge{{ $loop->index }}">{{ $challenge['challenge']}}</label>
+          </article>
+          @endforeach
+        </div>
+        @else
+        <p>(please login first to view your daily challenges...)</p>
+        @endif
 
           <!-- Hidden congratulation message -->
           <div id="congrats-message" style="display: none;">

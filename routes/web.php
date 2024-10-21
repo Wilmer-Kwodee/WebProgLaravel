@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [ChallengeController::class, 'index']);
+// Route::get('/',  function () {
+//     return 'ok berhasil masuk home';
+// });
 
 Route::get('/community', function () {
     return view('community', ['posts' => Post::all()]);
