@@ -5,23 +5,23 @@
                 <div class="flex h-16 items-center justify-between">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
-                            <img class="h-8 w-8" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
+                            <img class="h-8 w-8" src="https://tailwindui.com/plus/img/logos/mark.svg?color=cyan&shade=300"
                                 alt="Your Company">
                         </div>
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
                                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                                 <a href="/"
-                                    class="{{ request()->is('/') ? 'rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white' }} "
+                                    class="{{ request()->is('/') ? 'rounded-md bg-cyan-400 px-3 py-2 text-sm font-medium text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-cyan-300 hover:text-white' }} "
                                     aria-current="page">Home</a>
                                 <a href="/community"
-                                    class="{{ request()->is('dashboard') ? 'rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white' }}">Community</a>
+                                    class="{{ request()->is('community') ? 'rounded-md bg-cyan-400 px-3 py-2 text-sm font-medium text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-cyan-300 hover:text-white' }}">Community</a>
                                 <a href="/about"
-                                    class="{{ request()->is('about') ? 'rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white' }}">About</a>
+                                    class="{{ request()->is('about') ? 'rounded-md bg-cyan-400 px-3 py-2 text-sm font-medium text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-cyan-300 hover:text-white' }}">About</a>
                                 <a href="/login"
-                                    class="{{ request()->is('login') ? 'rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white' }}">Login</a>
+                                    class="{{ request()->is('login') ? 'rounded-md bg-cyan-400 px-3 py-2 text-sm font-medium text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-cyan-300 hover:text-white' }}">Login</a>
                                 <a href="/register"
-                                    class="{{ request()->is('register') ? 'rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white' }}">Register</a>
+                                    class="{{ request()->is('register') ? 'rounded-md bg-cyan-400 px-3 py-2 text-sm font-medium text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-cyan-300 hover:text-white' }}">Register</a>
                             </div>
                         </div>
                     </div>
