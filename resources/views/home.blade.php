@@ -29,18 +29,18 @@
 
       <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <h1 class="mt-16 text-7xl font-bold text-cyan-400">Your daily Challenge!</h1>
-        @if(!Auth::guest())        
-          <div id="challenges">
-            @foreach ($challenges as $challenge)
-            <article class="py-3 max-w-screen-md border-b border-gray-300">
-              <input type="checkbox" class="challenge-checkbox" id="challenge{{ $loop->index }}" name="challenge{{ $loop->index }}" value="{{ $challenge['challenge'] }}">
-              <label class="text-2xl" for="challenge{{ $loop->index }}">{{ $challenge['challenge']}}</label>
-            </article>
-            @endforeach
-          </div>
+        <div id="challenges">
+          @foreach ($challenges as $challenge)
+          <article class="py-3 max-w-screen-md border-b border-gray-300">
+            <input type="checkbox" class="challenge-checkbox" id="challenge{{ $loop->index }}" name="challenge{{ $loop->index }}" value="{{ $challenge['challenge'] }}">
+            <label class="text-2xl" for="challenge{{ $loop->index }}">{{ $challenge['challenge']}}</label>
+          </article>
+          @endforeach
+        </div>
+        {{-- @if()        
         @else
-          <p class="text-2xl italic text-gray-500">(please login first to view your daily challenges...)</p>
-        @endif
+        @endif --}}
+        <p class="text-2xl italic text-gray-500">(please login first to view your daily challenges...)</p>
 
         <div id="congrats-message" style="display: none;">
           <br/>
@@ -64,7 +64,6 @@
         
         <br/>
         <br/>
-        <h1 class="text-2xl">(designnya msh jlk bgt masih hrs di evolve wkowkokw)</h1>
       </div>
     </main>
   </div>
