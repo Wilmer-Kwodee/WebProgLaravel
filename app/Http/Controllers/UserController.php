@@ -25,17 +25,18 @@ class UserController extends Controller
         if (Auth::attempt(['email' => $request->email_input, 'password' => $request->password_input])) {
             return redirect('/');
         }
-    
+
         return 'not found';
     }
+    
     public function logout(Request $request): RedirectResponse
     {
         Auth::logout();
-    
+
         $request->session()->invalidate();
-    
+
         $request->session()->regenerateToken();
-    
+
         return redirect('/');
     }
 }

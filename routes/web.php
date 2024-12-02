@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ChallengeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
@@ -15,6 +16,9 @@ Route::get('/', [ChallengeController::class, 'index']);
 Route::get('/community', function () {
     return view('community', ['posts' => Post::all()]);
 });
+
+Route::get('/community/detail/:id', [PostController::class, 'getPostDetail']);
+
 Route::get('/login', function () {
     return view('login');
 });
@@ -35,3 +39,5 @@ Route::get('/logout', [UserController::class, 'logout']);
 // Route::get('/tailwind-test', function () {
 //     return view('app');
 // });
+Route::get('/articles', [ArticleController::class, 'index']);
+
