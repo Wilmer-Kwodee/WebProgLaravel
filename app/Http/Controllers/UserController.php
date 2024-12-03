@@ -11,6 +11,12 @@ class UserController extends Controller
 {
     //
     public function signup(Request $request){
+        $request->validate([
+            'name_input' => 'required|string|max:255',
+            'email_input' => 'required|string|email|max:255|unique:users,email',
+            'password_input' => 'required|string|min:8',
+        ]);
+
         $newUser = new User();
         $newUser->name = $request->name_input;
         $newUser->email = $request->email_input;
@@ -28,7 +34,7 @@ class UserController extends Controller
 
         return 'not found';
     }
-    
+
     public function logout(Request $request): RedirectResponse
     {
         Auth::logout();

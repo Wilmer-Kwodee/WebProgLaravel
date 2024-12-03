@@ -32,41 +32,42 @@
         @endphp
         <div class="flex flex-row justify-evenly flex-wrap">
           @foreach ($posts as $post)
+            <a href="{{ url('/community/detail/' . $post['id']) }}">
             <article class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white border border-gray-300">
               <div class="flex items-center p-4">
                 <img class="w-12 h-12 rounded-full border-2 border-blue-500" src="https://via.placeholder.com/150"/>
                 <div class="ml-4">
                   <div class="flex">
-                    <p class="text-lg font-bold text-gray-800">John Snow</p>
+                    <p class="text-lg font-bold text-gray-800">{{ $post['user']['name'] }}</p>
                     <p class="text-sm text-gray-500 ml-5 font-bold">5 mins</p>
                   </div>
                   <div>
                     @if(strlen($post['title']) <= 70)
-                      <p class="text-md text-gray-800">{{ $post['title']}}</p>
+                      <p class="text-md text-gray-800">{{ $post['title'] }}</p>
                     @else
                       <p class="text-md text-gray-800">{{ substr($post['title'], 0, 70)}}...</p>
                     @endif
                   </div>
                 </div>
               </div>
-              <img class="w-full h-36 object-cover" src="{{ asset('img' . $i . '.png') }}"/>
+              <img class="w-full h-36 object-cover" src=""/>
               @php
-                $i = $i + 1
               @endphp
             </article>
+            </a>
           @endforeach
         </div>
         @php
-            $j = 1;
         @endphp
         <h3 class="text-2xl px-5 pt-10 font-bold tracking-tight text-defaultColor">Top Posts</h3>
         @foreach ($posts as $post)
+        <a href="{{ url('/community/detail/' . $post['id']) }}">
           <div class="w-2/4 mx-auto mt-5 rounded-lg overflow-hidden shadow-lg border border-gray-300 bg-white">
             <div class="flex items-center justify-between px-4 py-3">
               <div class="flex items-center">
                 <img class="w-10 h-10 rounded-full border border-gray-300" src="https://via.placeholder.com/100"/>
                 <div class="ml-3">
-                  <h3 class="text-sm font-bold text-gray-800">John Snow</h3>
+                  <h3 class="text-sm font-bold text-gray-800">{{ $post['user']['name'] }}</h3>
                   <p class="text-xs text-gray-500">5 mins •</p>
                 </div>
               </div>
@@ -77,13 +78,13 @@
               </button>
             </div>
             <div class="px-4 py-2">
-              <p class="text-sm text-gray-800">{{ $post['title']}}</p>
+              <p class="text-sm text-gray-800">{{ $post['title'] }}</p>
             </div>
-            <img class="w-full h-64 object-cover" src="{{ asset('img' . $j . '.png') }}"/>
+            <img class="w-full h-64 object-cover" src="{{ $post['image'] }}"/>
             @php
-              $j = $j + 1
             @endphp
           </div>
+        </a>
         @endforeach
       </div>
     </main>

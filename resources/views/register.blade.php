@@ -58,14 +58,14 @@
                     @method('post')
 
                     <div>
-                        <label for="full_name_input" class="block text-black mb-2">Full Name</label>
+                        <label for="name_input" class="block text-black mb-2">Full Name</label>
                         <input
                             type="text"
-                            name="full_name_input"
-                            id="full_name_input"
+                            name="name_input"
+                            id="name_input"
                             class="w-full p-3 rounded-lg bg-white/90 border-0 focus:ring-2 focus:ring-white"
                             required
-                            value="{{ old('full_name_input') }}"
+                            value="{{ old('name_input') }}"
                         >
                     </div>
                     <div>

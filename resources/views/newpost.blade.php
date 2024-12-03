@@ -19,7 +19,7 @@
     <main class="bg-white">
       <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <!-- Your content -->
-        <form method="post" action="{{ url('/addnew') }}" class="flex flex-col" (yes, gausah di passing parameter apa apa)>
+        <form method="post" action="{{ url('/addPost') }}" class="flex flex-col" (yes, gausah di passing parameter apa apa)>
           @csrf
           <div class="flex">
             <div class="md:w-1/2">

@@ -13,11 +13,9 @@ Route::get('/', [ChallengeController::class, 'index']);
 //     return 'ok berhasil masuk home';
 // });
 
-Route::get('/community', function () {
-    return view('community', ['posts' => Post::all()]);
-});
+Route::get('/community', [PostController::class,'index']);
 
-Route::get('/community/detail/:id', [PostController::class, 'getPostDetail']);
+Route::get('/community/detail/{id}', [PostController::class, 'getPostDetail']);
 
 Route::get('/login', function () {
     return view('login');
@@ -33,7 +31,7 @@ Route::get('/about', function () {
 Route::get('/newpost', function () {
     return view('newpost');
 });
-Route::post('/addnew', [PostController::class, 'addnew']);
+Route::post('/addPost', [PostController::class, 'addPost']);
 Route::get('/logout', [UserController::class, 'logout']);
 
 // Route::get('/tailwind-test', function () {

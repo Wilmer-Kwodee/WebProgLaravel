@@ -9,16 +9,17 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $table="posts";
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, "userId");
     }
 
     public function like(){
-        return $this->hasMany(Like::class);
+        return $this->hasMany(Like::class, "postId");
     }
 
     public function reply(){
-        return $this->hasMany(Reply::class);
+        return $this->hasMany(Reply::class, "postId");
     }
 }
 

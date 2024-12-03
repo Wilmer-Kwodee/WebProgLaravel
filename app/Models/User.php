@@ -11,6 +11,7 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    protected $table="users";
     /**
      * The attributes that are mass assignable.
      *
@@ -46,14 +47,14 @@ class User extends Authenticatable
     }
 
     public function post(){
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Post::class, "userId");
     }
 
     public function reply(){
-        return $this->hasMany(Reply::class);
+        return $this->hasMany(Reply::class, "userId");
     }
 
     public function like(){
-        return $this->hasMany(Like::class);
+        return $this->hasMany(Like::class, "userId");
     }
 }
