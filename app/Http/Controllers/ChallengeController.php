@@ -15,4 +15,7 @@ class ChallengeController extends Controller
         $all_challenges = Challenge::all();
         return view('home', ['challenges' => $all_challenges]);
     }
+    public function proof(){
+        return view('proof');
+    }
 }

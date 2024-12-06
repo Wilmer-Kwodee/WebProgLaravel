@@ -38,4 +38,5 @@ Route::get('/logout', [UserController::class, 'logout']);
 //     return view('app');
 // });
 Route::get('/articles', [ArticleController::class, 'index']);
+Route::get('/proof', [ChallengeController::class, 'proof']);
 

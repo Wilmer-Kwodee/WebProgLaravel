@@ -39,6 +39,14 @@ CREATE TABLE `posts` (
 -- Dumping data for table `posts`
 --
 
+/*
+use defaultdb;
+
+INSERT INTO `posts` (`userId`, `title`, `body`, `created_at`, `updated_at`, `image`) VALUES
+(1, 'no wayyy i was told to wash my dishes with only 2 liter of water 😭', 're: bruh gud luck 👍😂, re2: bro is cooked ☠️', NULL, NULL, 'a'),
+(2, 'i just done the hardest water saving challenge 👍', 're: insane!!!, re2: NO WAYYYY, re3: bro did the impossible ☠️', NULL, NULL, 'a'),
+(3, 'dont drink a single drop of water since the morning 😎 (for the ocean ofc)', 're: bro saves the ocean by dismishing himself ☠️, re2: 😭😭😭', NULL, NULL, 'a');
+*/
 INSERT INTO `posts` (`id`, `title`, `body`, `created_at`, `updated_at`) VALUES
 (1, 'no wayyy i was told to wash my dishes with only 2 liter of water 😭', 're: bruh gud luck 👍😂, re2: bro is cooked ☠️', NULL, NULL),
 (2, 'i just done the hardest water saving challenge 👍', 're: insane!!!, re2: NO WAYYYY, re3: bro did the impossible ☠️', NULL, NULL),
