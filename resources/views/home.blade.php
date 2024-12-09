@@ -17,9 +17,9 @@
               Dashboard
             </h1> --}}
             <h1 class="text-8xl font-bold text-cyan-600">
-              Drop by Drop
+              @lang('home.dropbydrop')
             </h1>
-            <p class="mt-3 text-lg text-cyan-600">Save water, save the world!</p>
+            <p class="mt-3 text-lg text-cyan-600">@lang('home.slogan')</p>
         </div>
         <img src="{{url('/ocean.png')}}" style="width: 100%"/>
 

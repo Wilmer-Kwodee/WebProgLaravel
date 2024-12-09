@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ChallengeController;
+use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Models\Post;
@@ -40,3 +41,5 @@ Route::get('/logout', [UserController::class, 'logout']);
 Route::get('/articles', [ArticleController::class, 'index']);
 Route::get('/proof', [ChallengeController::class, 'proof']);
 
+// localization
+Route::get('/locale/{locale}', [LocalizationController::class, 'setLocale']);
