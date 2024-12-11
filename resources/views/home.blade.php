@@ -69,10 +69,19 @@
         <h1 class="text-7xl font-bold text-white">Your daily Challenge!</h1>
         <div id="challenges">
           @foreach ($challenges as $challenge)
-            <article class="py-3 my-6 w-[100%] bg-cyan-200 rounded-xl">
-              <input type="checkbox" class="ml-4 challenge-checkbox" id="challenge{{ $loop->index }}" name="challenge{{ $loop->index }}" value="{{ $challenge['challenge'] }}">
-              <label class="ml-4 text-2xl font-bold italic" for="challenge{{ $loop->index }}">{{ $challenge['challenge']}}</label>
-            </article>
+            <div>
+              <article class="py-3 my-6 w-[100%] bg-cyan-200 rounded-xl">
+                <input 
+                    type="checkbox" 
+                    class="ml-4 challenge-checkbox" 
+                    id="challenge{{ $loop->index }}" 
+                    name="challenge{{ $loop->index }}" 
+                    value="{{ $challenge['challenge'] }}" 
+                    onchange="event.preventDefault(); window.location.href='{{ route('proof')}}'"
+                />
+                <label class="ml-4 text-2xl font-bold italic" for="challenge{{ $loop->index }}">{{ $challenge['challenge']}}</label>
+              </article>
+            </a>
           @endforeach
         </div>
         <p class="text-2xl italic text-gray-500">(please login first to view your daily challenges...)</p>
@@ -133,21 +142,7 @@
   </div>
 
   <script>
-    const checkboxes = document.querySelectorAll('.challenge-checkbox');
-    const congratsMessage = document.getElementById('congrats-message');
-    const challenges = document.getElementById('challenges');
 
-    checkboxes.forEach(checkbox => {
-      checkbox.addEventListener('change', () => {
-        window.location.href = '/proof'
-        if (Array.from(checkboxes).every(cb => cb.checked)) {
-            challenges.style.display = 'none';
-          congratsMessage.style.display = 'block';
-        } else {
-          congratsMessage.style.display = 'none';
-        }
-      });
-    });
   </script>
 </body>
 

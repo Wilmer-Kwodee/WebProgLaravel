@@ -39,7 +39,7 @@ Route::get('/logout', [UserController::class, 'logout']);
 //     return view('app');
 // });
 Route::get('/articles', [ArticleController::class, 'index']);
-Route::get('/proof', [ChallengeController::class, 'proof']);
+Route::get('/proof', [ChallengeController::class, 'proof'])->name('proof');
 
 // localization
 Route::get('/locale/{locale}', [LocalizationController::class, 'setLocale']);
