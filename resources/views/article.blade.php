@@ -18,9 +18,11 @@
           </h1>
             <div class="relative w-2/4">
               <button class="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-500">🔍</button>
-              <input type="text" placeholder="Search community post" class="w-full px-10 py-2 bg-searchBg border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-backgroundColor focus:border-backgroundColor"/>
+              <input type="text" placeholder="Search articles..." class="w-full px-10 py-2 bg-searchBg border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-backgroundColor focus:border-backgroundColor"/>
             </div>
-          <a href="/newpost" class="bg-cyan-500 hover:bg-cyan-700 rounded-full bg-backgroundColor px-5 py-3 text-sm font-medium text-white">+ Share your thought</a>
+
+            {{-- if is admin --}}
+          <a href="/newpost" class="bg-cyan-500 hover:bg-cyan-700 rounded-full bg-backgroundColor px-5 py-3 text-sm font-medium text-white">+ Create New Article</a>
       </div>
     </header>
     <main class="bg-white">

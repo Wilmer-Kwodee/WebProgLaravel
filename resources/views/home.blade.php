@@ -12,7 +12,7 @@
   <div class="min-h-full">
     <x-navbar/>
     <main class="bg-white shadow">
-      <div id="home-section-1" class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <div id="home-section-1" class="absolute mx-auto max-w-7xl p-32">
           {{-- <h1 class="text-3xl font-bold tracking-tight text-gray-900">
               Dashboard
             </h1> --}}
@@ -20,8 +20,11 @@
               @lang('home.dropbydrop')
             </h1>
             <p class="mt-3 text-lg text-cyan-600">@lang('home.slogan')</p>
-        </div>
-        <img src="{{url('/ocean.png')}}" style="width: 100%"/>
+      </div>
+        {{-- <img src="{{url('/ocean.png')}}" style="width: 100%"/> --}}
+        <video autoplay loop class="w-screen">
+          <source src={{url("/istockphoto-1464814791-640_adpp_is.mp4")}} type="video/mp4">
+        </video>
 
       <div id="home-section-2" class="relative text-white font-serif">
         <img class="brightness-50" src="{{ url('/home 01-water-new.png') }}">
@@ -32,7 +35,7 @@
         </div>
       </div>
 
-      <div id="home-section-3" class="py-6 px-16 ">
+      <div id="home-section-3" class="py-6 px-16 mb-10">
         <h1 class="w-1/2 my-16 text-7xl font-bold text-cyan-400">Why is this important?</h1>
         <p class="font-serif">
           Clean water is the foundation of human health, hygiene, and well-being. It's crucial for:
@@ -44,20 +47,30 @@
           When water resources are strained, it leads to severe consequences, including waterborne diseases, malnutrition, poverty, and conflict. By addressing water scarcity, we can improve the quality of life for countless individuals and communities.
         </p>
       </div>
-      <div id="home-section-4" class="py-6 px-16 bg-cyan-100 w-1/2">
-        <h1 class="my-16 text-7xl font-bold text-cyan-400">Let's fight this together</h1>
-        <p class="font-serif">
-          We can make a difference by taking action, big or small. Every drop counts. Here's how you can contribute:
-
-          Conserve Water: Simple habits like shorter showers, fixing leaks, and using water-efficient appliances can significantly reduce water consumption.
-          Support Organizations: Donate to organizations working to provide clean water solutions in underserved areas.
-          Advocate for Change: Raise awareness about water scarcity and encourage policymakers to prioritize water conservation and sustainable water management.
-          Innovate: Develop innovative technologies to improve water efficiency and treatment.
-          By joining forces, we can create a sustainable future where everyone has access to clean water. Let's work together to protect this precious resource for generations to come.
-        </p>
-        <ul>
+      <div id="home-section-4" class="flex">
+        <div id="left" class="w-1/2 bg-cyan-100 py-6 px-16">
+          <h1 class="my-16 text-7xl font-bold text-cyan-400">Let's fight this together</h1>
+          <p class="font-serif">
+            We can make a difference by taking action, big or small. Every drop counts. Here's how you can contribute:
+  
+            Conserve Water: Simple habits like shorter showers, fixing leaks, and using water-efficient appliances can significantly reduce water consumption.
+            Support Organizations: Donate to organizations working to provide clean water solutions in underserved areas.
+            Advocate for Change: Raise awareness about water scarcity and encourage policymakers to prioritize water conservation and sustainable water management.
+            Innovate: Develop innovative technologies to improve water efficiency and treatment.
+            By joining forces, we can create a sustainable future where everyone has access to clean water. Let's work together to protect this precious resource for generations to come.
+          </p>          
+        </div>
+        <div id="right" class="w-1/2">
+          <img src={{url("/globalwatercrisis.png")}} />
+        </div>
       </div>
-
+      <div id="home-section-3" class="py-6 px-16 mb-10">
+        <h1 class="w-1/2 my-16 text-7xl font-bold text-cyan-400">Featured Articles</h1>
+        
+        <p class="font-serif">
+          [card 1] [card 2] [card 3]
+        </p>
+      </div>
 
 
 
@@ -84,7 +97,7 @@
             </a>
           @endforeach
         </div>
-        <p class="text-2xl italic text-gray-500">(please login first to view your daily challenges...)</p>
+        <p class="text-2xl italic text-gray-500">(please login first to do the daily challenges...)</p>
 
         <div id="congrats-message" style="display: none;">
           <br/>
