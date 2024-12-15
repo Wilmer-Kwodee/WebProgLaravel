@@ -38,19 +38,19 @@
                             <article
                                 class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white border border-gray-300">
                                 <div class="flex items-center p-4 w-full">
-                                    <div class="flex w-full">
-                                        <div class="flex flex-col justify-left w-3/4">
+                                    <div class="flex flex-col w-full">
+                                        <div class="flex justify-between items-center w-full">
                                             <p class="text-lg font-bold text-gray-800">{{ $post['user']['name'] }}</p>
+                                            <p class="text-sm text-gray-500 font-bold">5 mins</p>
+                                        </div>
+                                        <div class="w-full flex items-center justify-left">
                                             @if (strlen($post['title']) <= 70)
                                                 <p class="text-md text-gray-800">{{ $post['title'] }}</p>
                                             @else
-                                                <p class="text-md text-gray-800">{{ substr($post['title'], 0, 70) }}...
+                                                <p class="text-md text-gray-800">
+                                                    {{ substr($post['title'], 0, 70) }}...
                                                 </p>
                                             @endif
-
-                                        </div>
-                                        <div class="w-1/4 flex items-center justify-center">
-                                            <p class="text-sm text-gray-500 font-bold">5 mins</p>
                                         </div>
                                     </div>
                                 </div>

@@ -17,23 +17,20 @@ class LikeController extends Controller
             userId: $userId,
         )->create();
 
-        $post = Post::with('reply')->find($request->postId);
-
-        return view('post-detail', compact('post'));
+        return back();
     }
 
-    public function deleteLike(Request $request){
+    public function deleteLike($postId){
         $userId = Auth::id();
 
-        $like = Like::where('postId', $request->postId)
+        $like = Like::where('postId', $postId)
                     ->where('userId', $userId)
                     ->first();
 
         if ($like) {
-            $like->delete(); // Delete the like
+            $like->delete();
         }
 
-        $post = Post::with('reply')->find($request->postId);
-        return view('post-detail', compact('post'));
+        return back();
     }
 }

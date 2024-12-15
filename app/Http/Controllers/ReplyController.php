@@ -18,8 +18,6 @@ class ReplyController extends Controller
             description: $request->description,
         )->create();
 
-        $post = Post::with('reply')->find($request->postId);
-
-        return view('post-detail', compact('post'));
+        return back();
     }
 }

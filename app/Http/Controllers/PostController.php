@@ -18,8 +18,8 @@ class PostController extends Controller
         $userId = Auth::id();
 
         $image = $request->file('image');
-        $mimeType = $image->getMimeType();
-        $base64Image = 'data:' . $mimeType . ';base64,' . base64_encode(file_get_contents($image->getRealPath()));
+        $mimeType = $image ? $image->getMimeType() : '';
+        $base64Image = $image ? 'data:' . $mimeType . ';base64,' . base64_encode(file_get_contents($image->getRealPath())) : '';
 
         // dd($base64Image);
         $post = Post::factory()->withParams(
@@ -34,7 +34,7 @@ class PostController extends Controller
 
     public function getPostDetail($id){
         $post = Post::with('reply')->find($id) ;
-        
+
         return view('post-detail', compact('post'));
     }
 }
