@@ -15,7 +15,7 @@
     {{ $post }}
     {{ $post['title'] }}
     {{ $post['user']['name'] }}
-
+    
     @foreach ($post['reply'] as $reply)
         {{ $reply }}
     @endforeach

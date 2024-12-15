@@ -19,7 +19,7 @@
     <main class="bg-white">
       <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <!-- Your content -->
-        <form method="post" action="{{ url('/addPost') }}" class="flex flex-col" (yes, gausah di passing parameter apa apa)>
+        <form method="post" action="{{ url('/addPost') }}" class="flex flex-col" enctype="multipart/form-data">
           @csrf
           <div class="flex">
             <div class="md:w-1/2">
@@ -51,12 +51,8 @@
                   </p>
                   <p class="text-xs text-gray-500">PNG, JPG, GIF (Max 2MB)</p>
                 </div>
-                <input id="image-upload" type="file" class="hidden" accept="image/*" />
+                <input id="image-upload" name="image" type="file" accept="image/*" class="hidden"/>
               </label>
-            </div>
-            <div id="image-preview" class="mt-4 hidden"> <!-- dunno if this works/how cause this code is from gpt and it actually needs javascript hehe :D -->
-              <p class="text-sm font-medium text-gray-700 mb-2">Image Preview:</p>
-              <img id="preview-img" src="" alt="Preview" class="w-full h-auto rounded-lg shadow-md"/>
             </div>
           </div>
           <button class="w-1/6 mx-auto rounded-full bg-backgroundColor px-5 py-3 text-sm font-medium text-white bg-cyan-500 hover:bg-cyan-700" type="submit">Post!</button>

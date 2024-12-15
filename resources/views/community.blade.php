@@ -32,33 +32,31 @@
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                 <!-- Your content -->
                 <h3 class="text-2xl px-5 py-5 font-bold tracking-tight text-defaultColor">Latest Posts</h3>
-                @php
-                    $i = 1;
-                @endphp
                 <div class="flex flex-row justify-evenly flex-wrap">
                     @foreach ($posts as $post)
                         <a href="{{ url('/community/detail/' . $post['id']) }}">
                             <article
                                 class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white border border-gray-300">
-                                <div class="flex items-center p-4">
-                                    <img class="w-12 h-12 rounded-full border-2 border-blue-500"
-                                        src="https://via.placeholder.com/150" />
-                                    <div class="ml-4">
-                                        <div class="flex">
+                                <div class="flex items-center p-4 w-full">
+                                    <div class="flex w-full">
+                                        <div class="flex flex-col justify-left w-3/4">
                                             <p class="text-lg font-bold text-gray-800">{{ $post['user']['name'] }}</p>
-                                            <p class="text-sm text-gray-500 ml-5 font-bold">5 mins</p>
-                                        </div>
-                                        <div>
                                             @if (strlen($post['title']) <= 70)
                                                 <p class="text-md text-gray-800">{{ $post['title'] }}</p>
                                             @else
                                                 <p class="text-md text-gray-800">{{ substr($post['title'], 0, 70) }}...
                                                 </p>
                                             @endif
+
+                                        </div>
+                                        <div class="w-1/4 flex items-center justify-center">
+                                            <p class="text-sm text-gray-500 font-bold">5 mins</p>
                                         </div>
                                     </div>
                                 </div>
-                                <img class="w-full h-36 object-cover" src="" />
+                                @if ($post['image'])
+                                    <img class="w-full h-64 object-cover" src={{$post['image']}} alt="Image not found" />
+                                @endif
                                 @php
                                 @endphp
                             </article>
@@ -92,10 +90,9 @@
                             <div class="px-4 py-2">
                                 <p class="text-sm text-gray-800">{{ $post['title'] }}</p>
                             </div>
-                            @if (!$post['image'])
-                                <img class="w-full h-64 object-cover" src="" alt="Image not found" />
+                            @if ($post['image'])
+                                <img class="w-full h-64 object-cover" src={{$post['image']}} alt="Image not found" />
                             @endif
-                            <img class="w-full h-64 object-cover" src="{{ $post['image'] }}" />
                             @php
                             @endphp
                         </div>

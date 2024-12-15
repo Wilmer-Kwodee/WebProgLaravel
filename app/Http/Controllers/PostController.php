@@ -11,27 +11,30 @@ class PostController extends Controller
     //
     public function index(){
         $posts = Post::with('user')->get();
-        // dd($posts);
         return view('community', compact('posts'));
     }
 
     public function addPost(Request $request){
         $userId = Auth::id();
 
+        $image = $request->file('image');
+        $mimeType = $image->getMimeType();
+        $base64Image = 'data:' . $mimeType . ';base64,' . base64_encode(file_get_contents($image->getRealPath()));
+
+        // dd($base64Image);
         $post = Post::factory()->withParams(
             userId: $userId,
             title: $request->title,
             body: $request->body,
-            image: "",
+            image: $base64Image,
         )->create();
 
-        $posts = Post::with('user')->get();
-        return view('community', compact('posts'));
+        return back()->with('success', 'Post added successfully!');
     }
 
     public function getPostDetail($id){
         $post = Post::with('reply')->find($id) ;
-
+        
         return view('post-detail', compact('post'));
     }
 }

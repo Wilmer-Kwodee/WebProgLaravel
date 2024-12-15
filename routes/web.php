@@ -25,12 +25,16 @@ Route::post('/logincheck', [UserController::class, 'logincheck']);
 Route::get('/register', function () {
     return view('register');
 });
+
+
 Route::post('/signup', [UserController::class, 'signup']);
 Route::get('/about', function () {
     return view('about');
 });
+
+
 Route::get('/newpost', function () {
-    return view('newpost');
+    return view('new-post');
 });
 Route::post('/addPost', [PostController::class, 'addPost']);
 Route::get('/logout', [UserController::class, 'logout']);
