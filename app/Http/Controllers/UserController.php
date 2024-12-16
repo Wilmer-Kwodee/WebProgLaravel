@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -46,6 +47,11 @@ class UserController extends Controller
         return redirect('/');
     }
     public function profile(){
-        return view('profile');
+        $currUser = User::find(Auth::id());
+        // buat nama + email di profil
+
+        // $myposts = Post::where('userId', 'like', Auth::id())->get();
+        // return $currUser;
+        return view('profile', ['currUser' => $currUser]);
     }
 }

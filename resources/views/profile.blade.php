@@ -18,8 +18,14 @@
             src={{url("/profile-circle-icon-512x512-zxne30hp.png")}}
             alt="">
             <div class="flex flex-col gap-2">
-                <p class="text-3xl font-bold text-cyan-400">John Doe</p>
-                <p>johndoe@email.com</p>
+                <p class="text-3xl font-bold text-cyan-400">
+                    {{$currUser->name}}
+                </p>
+                <p>{{$currUser->email}}</p>
+                <p>Joined at {{
+                    substr($currUser->created_at, 0, 10)
+                }}
+                </p>
             </div>
         </div>
         <div class="mb-10">
@@ -34,7 +40,7 @@
         </div>
         <div class="mb-10">
             <p class="font-bold text-3xl">My community posts:</p>
-            <article class="my-6 max-w-sm rounded-lg overflow-hidden shadow-lg bg-white border border-gray-300">
+            {{-- <article class="my-6 max-w-sm rounded-lg overflow-hidden shadow-lg bg-white border border-gray-300">
                 <div class="flex items-center p-4">
                     <img class="w-12 h-12 rounded-full border-2 border-blue-500"
                         src="https://via.placeholder.com/150" />
@@ -49,7 +55,7 @@
                     </div>
                 </div>
                 <img class="w-full h-36 object-cover" src="" />
-            </article>
+            </article> --}}
         </div>
     </div>
     <x-footer/>
