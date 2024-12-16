@@ -70,6 +70,28 @@
         <p class="font-serif">
           [card 1] [card 2] [card 3]
         </p>
+        <div class="flex">
+
+          @for ($i = 0; $i < 3; $i++)
+          <article class="my-6 max-w-sm rounded-lg overflow-hidden shadow-lg bg-white border border-gray-300">
+            <div class="flex items-center p-4">
+                <img class="w-12 h-12 rounded-full border-2 border-blue-500"
+                    src="https://via.placeholder.com/150" />
+                <div class="ml-4">
+                    <div class="flex">
+                        <p class="text-lg font-bold text-gray-800">username</p>
+                        <p class="text-sm text-gray-500 ml-5 font-bold">5 mins</p>
+                    </div>
+                    <div>
+                        <p class="text-md text-gray-800">Title</p>
+                    </div>
+                </div>
+            </div>
+            <img class="w-full h-36 object-cover" src="" />
+        </article>
+          @endfor
+        </div>
+
       </div>
 
 

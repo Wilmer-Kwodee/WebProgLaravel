@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Profile</title>
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
 <body>
     <x-navbar/>
-    <div class="h-[300px] bg-blue-950"></div>
-    {{-- <img class="brightness-50 h-[300px]" src="{{ url('/home 01-water-new.png') }}"> --}}
+    {{-- <div class="h-[300px] bg-blue-950"></div> --}}
+    <img class="brightness-50 h-[300px] w-screen" src="{{ url('/home 01-water-new.png') }}">
     <div id="section-1" class="p-16">
         <div class="flex gap-4 mb-10">
             <img class="h-32 w-32 rounded-full"
