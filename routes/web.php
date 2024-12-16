@@ -47,6 +47,7 @@ Route::get('/about', function () {
 // });
 Route::get('/articles', [ArticleController::class, 'index']);
 Route::get('/proof', [ChallengeController::class, 'proof'])->name('proof');
+Route::get('/profile', [UserController::class, 'profile']);
 
 // localization
 Route::get('/locale/{locale}', [LocalizationController::class, 'setLocale']);
