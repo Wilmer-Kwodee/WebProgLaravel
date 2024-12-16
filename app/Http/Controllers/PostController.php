@@ -11,6 +11,7 @@ class PostController extends Controller
     //
     public function index(){
         $posts = Post::with('user')->get();
+
         return view('community', compact('posts'));
     }
 
@@ -33,8 +34,10 @@ class PostController extends Controller
     }
 
     public function getPostDetail($id){
-        $post = Post::with('reply')->find($id) ;
+        $userId = Auth::id();
+        $post = Post::with('reply.user', 'like')->find($id);
+        $userLiked = $post['like']->contains('userId', $userId);
 
-        return view('post-detail', compact('post'));
+        return view('post-detail', compact('post', 'userLiked'));
     }
 }

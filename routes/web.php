@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ChallengeController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ReplyController;
@@ -37,6 +38,8 @@ Route::get('/newpost', function () {
 Route::post('/addPost', [PostController::class, 'addPost']);
 Route::post('/addReply', [ReplyController::class, 'addReply']);
 
+Route::post('/likePost', [LikeController::class, 'addLike']);
+Route::post('/unlikePost', [LikeController::class, 'deleteLike']);
 
 
 Route::get('/about', function () {

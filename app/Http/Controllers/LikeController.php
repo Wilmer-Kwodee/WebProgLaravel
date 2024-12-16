@@ -20,10 +20,10 @@ class LikeController extends Controller
         return back();
     }
 
-    public function deleteLike($postId){
+    public function deleteLike(Request $request){
         $userId = Auth::id();
 
-        $like = Like::where('postId', $postId)
+        $like = Like::where('postId', $request->postId)
                     ->where('userId', $userId)
                     ->first();
 
