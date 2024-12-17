@@ -22,7 +22,7 @@
             </div>
 
             {{-- if is admin --}}
-          <a href="/newpost" class="bg-cyan-500 hover:bg-cyan-700 rounded-full bg-backgroundColor px-5 py-3 text-sm font-medium text-white">+ Create New Article</a>
+          <a href="/newarticle" class="bg-cyan-500 hover:bg-cyan-700 rounded-full bg-backgroundColor px-5 py-3 text-sm font-medium text-white">+ Create New Article</a>
       </div>
     </header>
     <main class="bg-white">
@@ -38,7 +38,7 @@
                         <div
                             class="w-2/4 mx-auto mt-5 rounded-lg overflow-hidden shadow-lg border border-gray-300 bg-white">
                             <div class="flex items-center justify-between px-4 py-3">
-                                <div class="flex items-center">
+                                <div class="flex items-center font-bold">
                                     {{$article->title}}
                                 </div>
                                 <button class="text-gray-500 hover:text-gray-700">
@@ -52,9 +52,7 @@
                             <div class="px-4 py-2">
                                 <p class="text-sm text-gray-800">{{$article->body}}Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia quibusdam nam impedit necessitatibus, ipsum molestias corporis tempore in dicta et eligendi inventore deserunt ducimus doloremque blanditiis cumque pariatur dolor?</p>
                             </div>
-                            @if (1+1==2)
-                                <img class="w-full h-64 object-cover" src="" alt="Image not found" />
-                            @endif
+                            <img class="w-full h-64 object-cover" src="{{ $article->picture }}" alt="Image not found" />
                             @php
                             @endphp
                         </div>
