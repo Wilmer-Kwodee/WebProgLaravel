@@ -23,7 +23,7 @@
       </div>
         {{-- <img src="{{asset('/ocean.png')}}" style="width: 100%"/> --}}
         <video autoplay loop class="w-screen">
-          <source src={{asset("istockphoto-1464814791-640_adpp_is.mp4")}} type="video/mp4">
+          <source src={{ asset("istockphoto-1464814791-640_adpp_is.mp4")}} type="video/mp4">
         </video>
 
       <div id="home-section-2" class="relative text-white font-serif">
@@ -61,7 +61,7 @@
           </p>          
         </div>
         <div id="right" class="w-1/2">
-          <img src={{asset("globalwatercrisis.png")}} />
+          <img src={{ asset("globalwatercrisis.png")}} />
         </div>
       </div>
       <div id="home-section-3" class="py-6 px-16 mb-10">

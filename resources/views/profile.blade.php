@@ -15,7 +15,7 @@
     <div id="section-1" class="p-16">
         <div class="flex gap-4 mb-10">
             <img class="h-32 w-32 rounded-full"
-            src={{asset("profile-circle-icon-512x512-zxne30hp.png")}}
+            src={{ asset("profile-circle-icon-512x512-zxne30hp.png")}}
             alt="">
             <div class="flex flex-col gap-2">
                 <p class="text-3xl font-bold text-cyan-400">
