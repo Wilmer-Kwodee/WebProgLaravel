@@ -5,7 +5,7 @@
                 <div class="flex h-16 items-center justify-between">
                     <div class="flex items-center">
                         <div class="flex-shrink-0">
-                            
+
                                 <svg width="40" height="42" viewBox="0 0 60 62" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <rect width="60" height="62" rx="17" fill="#00C4FF"/>
                                     <rect x="8.57129" y="17.2787" width="21.1765" height="27.9508" fill="url(#pattern0_28_60)"/>
@@ -177,15 +177,14 @@
                             <a href="/"
                                 class="{{ request()->is('/') ? 'rounded-md bg-cyan-400 px-3 py-2 text-sm font-medium text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-cyan-300 hover:text-white' }} "
                                 aria-current="page">Home</a>
-                            <a href="/articles"
-                                class="{{ request()->is('articles') ? 'rounded-md bg-cyan-400 px-3 py-2 text-sm font-medium text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-cyan-300 hover:text-white' }}">@lang('navbar.articles')</a>
-                           
                             <a href="/community"
                                 class="{{ request()->is('community') ? 'rounded-md bg-cyan-400 px-3 py-2 text-sm font-medium text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-cyan-300 hover:text-white' }}">Community</a>
+                            <a href="/articles"
+                                class="{{ request()->is('articles') ? 'rounded-md bg-cyan-400 px-3 py-2 text-sm font-medium text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-cyan-300 hover:text-white' }}">@lang('navbar.articles')</a>
                             <a href="/about"
                                 class="{{ request()->is('about') ? 'rounded-md bg-cyan-400 px-3 py-2 text-sm font-medium text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-cyan-300 hover:text-white' }}">About</a>
 
-                                
+
                             </div>
                         </div>
                     </div>

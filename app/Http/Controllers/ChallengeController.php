@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Challenge;
 use App\Models\UserChallenge;
 use Illuminate\Http\Request;
@@ -13,7 +14,9 @@ class ChallengeController extends Controller
     //
     public function index(){
         $all_challenges = Challenge::all();
-        return view('home', ['challenges' => $all_challenges]);
+        $articles = Article::all();
+        // ini gimana ya, apa perlu panggil dri controller berbeda?
+        return view('home', ['challenges' => $all_challenges, 'articles' => $articles]);
     }
     public function proof(){
         return view('proof');

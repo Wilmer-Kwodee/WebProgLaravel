@@ -11,7 +11,8 @@ use Illuminate\Http\RedirectResponse;
 class UserController extends Controller
 {
     //
-    public function signup(Request $request){
+    public function signup(Request $request)
+    {
         $request->validate([
             'name_input' => 'required|string|max:255',
             'email_input' => 'required|string|email|max:255|unique:users,email',
@@ -46,12 +47,11 @@ class UserController extends Controller
 
         return redirect('/');
     }
-    public function profile(){
+    public function profile()
+    {
         $currUser = User::find(Auth::id());
-        // buat nama + email di profil
+        $myPosts = Post::where('userId', 'like', $currUser->id)->get();
 
-        // $myposts = Post::where('userId', 'like', Auth::id())->get();
-        // return $currUser;
-        return view('profile', ['currUser' => $currUser]);
+        return view('profile', ['currUser' => $currUser, 'myPosts' => $myPosts]);
     }
 }
