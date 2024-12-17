@@ -1,19 +1,38 @@
 /** @type {import('tailwindcss').Config} */
 
-const defaultTheme = require('tailwindcss/defaultTheme')
+import defaultTheme from 'tailwindcss/defaultTheme';
+import { defineConfig } from 'tailwindcss';
 
-export default {
-  content: [
-    "./resources/**/*.blade.php",
-    "./resources/**/*.js",
-    "./resources/**/*.vue",
-  ],
-  theme: {
+export default defineConfig({
+    content: [
+        "./resources/**/*.blade.php",
+        "./resources/**/*.js",
+        "./resources/**/*.vue",
+    ],
+    theme: {
     extend: {
         fontFamily: {
-        sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
-      },
+            sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
+            },
+        },
     },
-  },
-  plugins: [],
-}
+    plugins: [],
+});
+
+// const defaultTheme = require('tailwindcss/defaultTheme')
+
+// export default {
+//   content: [
+//     "./resources/**/*.blade.php",
+//     "./resources/**/*.js",
+//     "./resources/**/*.vue",
+//   ],
+//   theme: {
+//     extend: {
+//         fontFamily: {
+//         sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
+//       },
+//     },
+//   },
+//   plugins: [],
+// }
