@@ -18,7 +18,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
-        "APP_URL": "https://reynaldovinsen.com",
+        "APP_URL": "https://drop-by-drop-alpha.vercel.app",
         "APP_KEY": "=base64:lQAhLeCRpd8dWb+yG32BBxw/Jh4tI6Z2VQIju5SCYek=",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
